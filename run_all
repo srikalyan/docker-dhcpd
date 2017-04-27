@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo ifconfig eth1 192.168.0.100 netmask 255.255.255.0
+
+docker run -it --rm --net=host -v "$(pwd)/data":/data networkboot/dhcpd eth1
